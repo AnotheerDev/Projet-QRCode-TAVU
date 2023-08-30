@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Téléchargement de l'application</title>
+<script>
+    function detectOSAndRedirect() {
+        const userAgent = navigator.userAgent.toLowerCase();
+        
+        if (userAgent.includes("android")) {
+            window.location.href = "https://play.google.com/store/apps/details?id=com.atelierpandore.tavu";
+        } else if (userAgent.includes("iphone") || userAgent.includes("ipad") || userAgent.includes("ipod")) {
+            window.location.href = "https://apps.apple.com/fr/app/tavu-agence-de-guide-virtuel/id1620162682";
+        } else {
+            // Redirection générique si le système d'exploitation n'est pas détecté
+            window.location.href = "https://www.atelier-pandore.fr/tavu/";
+        }
+    }
+</script>
+</head>
+<body onload="detectOSAndRedirect();">
+</body>
+</html>
